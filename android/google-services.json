@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "72251752814",
+    "firebase_url": "https://waste-management-f65c3-default-rtdb.firebaseio.com",
+    "project_id": "waste-management-f65c3",
+    "storage_bucket": "waste-management-f65c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72251752814:android:0f7c58cd00d3a164ef017f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project_by_noobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72251752814-brri2k9d6ifj51p3jpb485dp10cknjfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvxT8AUd2uvCMyI4xegHM1bzfjq6Q8Vfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72251752814-brri2k9d6ifj51p3jpb485dp10cknjfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
