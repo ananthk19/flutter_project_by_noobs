@@ -1,12 +1,21 @@
-import 'package:flutter/material.dart';
+import 'dart:collection';
 
-void main() {
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_project_by_noobs/customer_login.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       title: 'flutter_project_by_noobs',
       initialRoute: '/',
       routes: {
-        '/': (context) => const NavigationRoute(),
+        '/': (context) =>  customer_login(),
         '/customer': (context) => const CustomerRoute(),
         '/myAgents': (context) => const MyAgentsRoute(),
         '/agent': (context) => const AgentRoute(),
@@ -41,6 +50,12 @@ class NavigationRoute extends StatelessWidget {
               Navigator.pushNamed(context, '/agent');
             },
            ),
+          ElevatedButton(
+            child: const Text("Test"),
+            onPressed: (){
+
+            },
+          ),
         ],
       ),
     );
@@ -152,3 +167,7 @@ class MyCommunityRoute extends StatelessWidget {
     );
   }
 }
+
+
+
+
