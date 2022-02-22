@@ -12,7 +12,7 @@ void main() async {
   await Firebase.initializeApp();
   runApp(
     MaterialApp(
-      title: 'flutter_project_by_noobs_abhijith',
+      title: 'flutter_project_by_noobs',
       initialRoute: '/',
       routes: {
         '/': (context) =>  customer_login(),
