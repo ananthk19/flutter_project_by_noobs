@@ -1,5 +1,6 @@
 import 'dart:collection';
-
+import 'package:flutter_project_by_noobs/map_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -8,14 +9,16 @@ import 'package:flutter_project_by_noobs/customer_login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp();
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  var email = sharedPreferences.getString("email");
 
-  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       title: 'flutter_project_by_noobs',
       initialRoute: '/',
       routes: {
-        '/': (context) =>  customer_login(),
+        '/':(context)=>email=="" ? customer_login():const map_test(),
         '/customer': (context) => const CustomerRoute(),
         '/myAgents': (context) => const MyAgentsRoute(),
         '/agent': (context) => const AgentRoute(),
@@ -31,7 +34,7 @@ class NavigationRoute extends StatelessWidget {
   const NavigationRoute({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         title: const Text("Navigation"),
@@ -51,9 +54,11 @@ class NavigationRoute extends StatelessWidget {
             },
            ),
           ElevatedButton(
-            child: const Text("Test"),
-            onPressed: (){
-
+            child: const Text("LogOut"),
+            onPressed: () async {
+                FirebaseAuth.instance.signOut();
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setString("email", "");
             },
           ),
         ],

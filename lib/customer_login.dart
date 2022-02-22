@@ -4,9 +4,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class customer_login extends StatefulWidget{
   @override
@@ -101,6 +101,8 @@ class Customer_signIn extends State<customer_login>{
                                   Fluttertoast.showToast(
                                       msg: "Login Success",
                                   toastLength: Toast.LENGTH_LONG);
+                                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                                  prefs.setString("email", emailController.text);
                                   Navigator.pushNamed(context,'/customer');
                                 }
                               },
