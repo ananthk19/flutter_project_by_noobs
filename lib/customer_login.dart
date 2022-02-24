@@ -6,6 +6,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 class customer_login extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -19,7 +20,7 @@ class Customer_signIn extends State<customer_login>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Customer Login"),
+        // title: const Text("Customer Login"),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -49,3 +50,4 @@ class Customer_signIn extends State<customer_login>{
   }
   
 }
+
