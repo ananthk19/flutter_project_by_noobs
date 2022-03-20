@@ -1,17 +1,21 @@
+import 'dart:collection';
+import 'dart:ui';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class customer_login extends StatefulWidget{
+class agent_login extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return Customer_signIn();
+    return _Agent_signIn();
   }
 
 }
 
-class Customer_signIn extends State<customer_login>{
+class _Agent_signIn extends State<agent_login>{
   FirebaseAuth auth = FirebaseAuth.instance;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -19,7 +23,7 @@ class Customer_signIn extends State<customer_login>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Customer Login"),
+        title: const Text("Agent Login"),
       ),
       body: Stack(
         children:<Widget> [
@@ -95,10 +99,10 @@ class Customer_signIn extends State<customer_login>{
                                 else{
                                   Fluttertoast.showToast(
                                       msg: "Login Success",
-                                  toastLength: Toast.LENGTH_LONG);
+                                      toastLength: Toast.LENGTH_LONG);
                                   SharedPreferences prefs = await SharedPreferences.getInstance();
                                   prefs.setString("email", emailController.text);
-                                  Navigator.pushNamed(context,'agent_community');
+                                  Navigator.pushNamed(context,'/customer');
                                 }
                               },
                             )
@@ -141,12 +145,12 @@ class Customer_signIn extends State<customer_login>{
 
         return authresult.user;}
     }catch(e){
-          return null;
-      }
-
-
+      return null;
     }
 
 
   }
-  
+
+
+}
+
