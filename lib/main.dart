@@ -23,7 +23,7 @@ void main() async {
         '/myAgents': (context) => MyAgentsRoute(),
         '/agent': (context) => AgentRoute(),
         '/localMap': (context) => LocalMapRoute(),
-        '/myCommunity': (context) => MyCommunityRoute(),
+        '/myCommunity': (context) => myCommunityRoute(),
       },
     ),
   );

@@ -2,22 +2,21 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_project_by_noobs/routes/localMapRoute.dart';
 import 'package:flutter_project_by_noobs/customer_registration_form.dart';
 import 'package:flutter_project_by_noobs/favorite_customers.dart';
 import 'package:flutter_project_by_noobs/public_feed.dart';
 
-import 'map_test.dart';
 
 
-class agent_community extends StatefulWidget {
-  const agent_community({Key? key}) : super(key: key);
+class myCommunityRoute extends StatefulWidget {
+  const myCommunityRoute({Key? key}) : super(key: key);
 
   @override
-  _agent_communityState createState() => _agent_communityState();
+  _myCommunityRouteState createState() => _myCommunityRouteState();
 }
 
-class _agent_communityState extends State<agent_community> {
+class _myCommunityRouteState extends State<myCommunityRoute> {
       int index = 0;
       Widget screen = public_feed();
       @override
@@ -52,7 +51,7 @@ class _agent_communityState extends State<agent_community> {
                   screen = favorite_customers();
                 }
                 if(index==1){
-                  screen = map_test();
+                  screen = LocalMapRoute();
                 }
                 if(index==3){
                   screen = customer_registration_form();
