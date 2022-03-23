@@ -1,9 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_by_noobs/routes/localMapRoute.dart';
-import 'package:flutter_project_by_noobs/customer_registration_form.dart';
+import 'package:flutter_project_by_noobs/routes/customer_registration_form.dart';
 import 'package:flutter_project_by_noobs/favorite_customers.dart';
 import 'package:flutter_project_by_noobs/public_feed.dart';
 

@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_project_by_noobs/routes/customerRoute.dart';
+import 'package:flutter_project_by_noobs/routes/customer_registration_form.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -92,13 +95,15 @@ class Customer_signIn extends State<customer_login>{
                                   passwordController.clear();
 
                                 }
+
                                 else{
                                   Fluttertoast.showToast(
                                       msg: "Login Success",
-                                  toastLength: Toast.LENGTH_LONG);
+                                      toastLength: Toast.LENGTH_LONG);
                                   SharedPreferences prefs = await SharedPreferences.getInstance();
                                   prefs.setString("email", emailController.text);
-                                  Navigator.pushNamed(context,'agent_community');
+                                  Navigator.pushNamed(context,'/customerHome');
+
                                 }
                               },
                             )
@@ -108,7 +113,9 @@ class Customer_signIn extends State<customer_login>{
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextButton(
-                                onPressed: () {  },
+                                onPressed: () {
+                                  Navigator.pushNamed(context,'/register');
+                                },
                                 child: const Text('Register'),
 
                               ),
@@ -134,6 +141,7 @@ class Customer_signIn extends State<customer_login>{
   Future signIn() async{
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
+
     try{
       if(emailController != null && passwordController != null){
         UserCredential authresult = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email,
@@ -149,4 +157,4 @@ class Customer_signIn extends State<customer_login>{
 
 
   }
-  
+

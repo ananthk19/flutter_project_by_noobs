@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_project_by_noobs/customer_registration_form.dart';
+import 'package:flutter_project_by_noobs/routes/customer_registration_form.dart';
 import 'package:flutter_project_by_noobs/favorite_customers.dart';
 import 'package:flutter_project_by_noobs/public_feed.dart';
 

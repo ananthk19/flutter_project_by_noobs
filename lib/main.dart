@@ -1,3 +1,5 @@
+import 'package:flutter_project_by_noobs/customer_login.dart';
+import 'package:flutter_project_by_noobs/routes/customer_registration_form.dart';
 import 'package:flutter_project_by_noobs/routes/navigationRoute.dart';
 import 'package:flutter_project_by_noobs/routes/customerRoute.dart';
 import 'package:flutter_project_by_noobs/routes/localMapRoute.dart';
@@ -19,7 +21,10 @@ void main() async {
       initialRoute: '/',
       routes: {
         '/': (context) =>  NavigationRoute(),
-        '/customer': (context) => CustomerRoute(),
+        //'/customer': (context) => CustomerRoute(),
+        '/register' :(context) => customer_registration_form(),
+        '/customerHome': (context) => CustomerRoute(),
+        '/customer': (context) =>customer_login(),
         '/myAgents': (context) => MyAgentsRoute(),
         '/agent': (context) => AgentRoute(),
         '/localMap': (context) => LocalMapRoute(),

@@ -23,9 +23,7 @@ class _LocalMapRouteState extends State<LocalMapRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("localMap"),
-      ),
+
       body: _loadMap(context),
     );;
   }
